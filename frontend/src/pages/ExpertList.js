@@ -16,6 +16,7 @@ export default function ExpertList() {
 
   useEffect(() => {
     fetchExperts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page, category]);
 
   const fetchExperts = async () => {

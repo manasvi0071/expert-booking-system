@@ -11,9 +11,9 @@ export default function ExpertDetail() {
   const [error, setError] = useState('');
   const [bookedSlots, setBookedSlots] = useState([]);
 
-  useEffect(() => {
+ useEffect(() => {
     fetchExpert();
-
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     socket.on('slotBooked', ({ expertId, date, timeSlot }) => {
       if (expertId === id) {
         setBookedSlots(prev => [...prev, `${date}_${timeSlot}`]);
